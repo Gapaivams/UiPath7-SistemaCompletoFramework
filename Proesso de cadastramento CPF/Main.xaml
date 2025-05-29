@@ -164,7 +164,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <State.Transitions>
-          <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_4">
+          <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:PointCollection x:Key="ConnectorLocation">440,312 440,342 440.5,342 440.5,400</av:PointCollection>
@@ -226,7 +226,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <State.Transitions>
-                  <Transition DisplayName="T2" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_2">
+                  <Transition DisplayName="NewData" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:PointCollection x:Key="ConnectorLocation">440.5,517 440.5,547 440,547 440,630</av:PointCollection>
@@ -235,7 +235,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Esse processo verifica se o cpf cadastrado é valido e se a idade seta de acordo" DisplayName="Processo" sap:VirtualizedContainerService.HintSize="150,147" sap2010:WorkflowViewState.IdRef="State_3">
+                      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Esse processo verifica se o cpf cadastrado é valido e se a idade seta de acordo" DisplayName="Processo" sap:VirtualizedContainerService.HintSize="516,1410" sap2010:WorkflowViewState.IdRef="State_3">
                         <State.Entry>
                           <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="470,964" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                             <TryCatch.Try>
@@ -299,7 +299,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <State.Transitions>
-                          <Transition DisplayName="T3" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_1">
+                          <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:PointCollection x:Key="ConnectorLocation">365,710.85 298,710.85 298,452.65 364,452.65</av:PointCollection>
@@ -313,11 +313,9 @@
                             <Transition.Action>
                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="347,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Pedido para pegar o proximo item da fila&quot;]" />
                             </Transition.Action>
-                            <Transition.Condition>
-                              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="SystemException is nothing" />
-                            </Transition.Condition>
+                            <Transition.Condition>[SystemException is nothing]</Transition.Condition>
                           </Transition>
-                          <Transition DisplayName="T6" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="Transition_6">
+                          <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="Transition_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:PointCollection x:Key="ConnectorLocation">365,769.65 223,769.65 223,235.20000000000002 365,235.20000000000002</av:PointCollection>
@@ -328,9 +326,7 @@
                             <Transition.To>
                               <x:Reference>__ReferenceID1</x:Reference>
                             </Transition.To>
-                            <Transition.Condition>
-                              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="SystemException isnot nothing" />
-                            </Transition.Condition>
+                            <Transition.Condition>[SystemException isnot nothing]</Transition.Condition>
                           </Transition>
                         </State.Transitions>
                       </State>
@@ -338,11 +334,9 @@
                     <Transition.Action>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="347,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;O item da fila foi pego com sucesso&quot;]" />
                     </Transition.Action>
-                    <Transition.Condition>
-                      <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="queItem isnot nothing" />
-                    </Transition.Condition>
+                    <Transition.Condition>[queItem isnot nothing]</Transition.Condition>
                   </Transition>
-                  <Transition DisplayName="T5" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_3">
+                  <Transition DisplayName="NoData" sap:VirtualizedContainerService.HintSize="450,519" sap2010:WorkflowViewState.IdRef="Transition_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:PointCollection x:Key="ConnectorLocation">517,464.35 547,464.35 547,466.6 615,466.6</av:PointCollection>
@@ -372,9 +366,7 @@
                     <Transition.Action>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="347,141" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;nâo há mais itens na fila&quot;]" />
                     </Transition.Action>
-                    <Transition.Condition>
-                      <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="queItem is nothing" />
-                    </Transition.Condition>
+                    <Transition.Condition>[queItem is nothing]</Transition.Condition>
                   </Transition>
                 </State.Transitions>
               </State>
@@ -382,11 +374,9 @@
             <Transition.Action>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="347,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;O processo foi inicializado com sucesso&quot;]" />
             </Transition.Action>
-            <Transition.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="SystemException is nothing" />
-            </Transition.Condition>
+            <Transition.Condition>[SystemException is nothing]</Transition.Condition>
           </Transition>
-          <Transition DisplayName="T4" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="Transition_5">
+          <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="Transition_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:PointCollection x:Key="ConnectorLocation">515,216 697.5,216 697.5,394</av:PointCollection>
@@ -397,9 +387,7 @@
             <Transition.To>
               <x:Reference>__ReferenceID2</x:Reference>
             </Transition.To>
-            <Transition.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="SystemException isnot Nothing" />
-            </Transition.Condition>
+            <Transition.Condition>[SystemException isnot Nothing]</Transition.Condition>
           </Transition>
         </State.Transitions>
       </State>
